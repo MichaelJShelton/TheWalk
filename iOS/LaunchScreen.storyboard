@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <connections/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="34" key="view" image="Light-Blue-Full.png">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <rect key="frame" x="380" y="760" width="160" height="240"/>
+                        </variation>
+                    </imageView>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="76" y="368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Settings50.png" width="50" height="50"/>
+        <image name="Home50.png" width="50" height="50"/>
+        <image name="Home35.png" width="35" height="35"/>
+        <image name="Settings35.png" width="35" height="35"/>
+        <image name="Light-Blue-Full.png" width="640" height="154"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedScreenMetrics key="destination" type="retina55"/>
+    </simulatedMetricsContainer>
+</document>
