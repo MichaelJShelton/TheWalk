@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <Pages>
-	<Page Name="Home" bannerSource="http://wac.6261.mucdn.net/806261/artwork/images/cdn/673746/960/540/image.jpg">
+	<Page Name="Home" Title="Home" bannerSource="http://wac.6261.mucdn.net/806261/artwork/images/cdn/673746/960/540/image.jpg">
 		<MediaContent>
 			<Media
 				Title="Welcome"
@@ -44,7 +44,7 @@
 				ThumbnailUrl="http://wac.6261.mucdn.net/806261/artwork/images/cdn/673389/120/120/image.jpg"
 				SourceUrl="http://subsplash.com/embed/e08a44c?video&amp;audio&amp;logo_watermark&amp;inwebplayer"
 				ResourceTitle="Discussion Questions"
-				ResourceUrl="http://av1.w3e.subsplash.com/media/download/WK8H9Q/Discussion8_9Step2.pdf"
+				ResourceUrl="http://av1.w3e.subsplash.com/media/download/WK8H9Q/Discussion8_9STEP_2.pdf"
 			/>
 			<Media
 				Title="Step 3"

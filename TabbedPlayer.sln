@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabbedPlayer", "TabbedPlayer\TabbedPlayer.csproj", "{C81FFD29-75C1-4A73-82B4-A775A8A8647E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabbedPlayer.iOS", "iOS\TabbedPlayer.iOS.csproj", "{641F2728-6317-447C-8725-337E43E5EAD0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheWalk.iOS", "iOS\TheWalk.iOS.csproj", "{641F2728-6317-447C-8725-337E43E5EAD0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabbedPlayer.Droid", "Droid\TabbedPlayer.Droid.csproj", "{1159FEEE-F74A-44C1-9A5E-DC2A19F3AB02}"
 EndProject
