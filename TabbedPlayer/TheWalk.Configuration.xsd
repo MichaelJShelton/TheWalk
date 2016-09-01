@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Pages" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="Pages" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="Page">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MediaContent" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Media" minOccurs="0" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:attribute name="Title" type="xs:string" />
+												<xs:attribute name="Detail" type="xs:string" />
+												<xs:attribute name="ThumbnailUrl" type="xs:string" />
+												<xs:attribute name="SourceUrl" type="xs:string" />
+												<xs:attribute name="ResourceTitle" type="xs:string" />
+												<xs:attribute name="ResourceUrl" type="xs:string" />
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="Name" type="xs:string" />
+						<xs:attribute name="Title" type="xs:string" />
+						<xs:attribute name="bannerSource" type="xs:string" />
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
