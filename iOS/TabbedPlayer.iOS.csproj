@@ -171,6 +171,9 @@
   <ItemGroup>
     <BundleResource Include="Resources\Home35.png" />
     <BundleResource Include="Resources\Settings35.png" />
+    <BundleResource Include="Resources\Home20.png" />
+    <BundleResource Include="Resources\Settings20.png" />
+    <BundleResource Include="Resources\FootSteps20.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Light-Blue-Full.png" />

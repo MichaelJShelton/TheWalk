@@ -1,26 +1,25 @@
 ﻿using System;
-
+using System.Collections.Generic;
+using System.Linq;
+using System.Xml;
+using System.Xml.Linq;
 using Xamarin.Forms;
 
 namespace TabbedPlayer
 {
 	public class HomePage : ContentPage
 	{
+		private const string PageName = "Home";
+
 		public HomePage()
 		{
-			Icon = "Home35.png";
+			Icon = "Home20.png";
 
-			Content = new StackLayout
-			{
-				Padding = new Thickness(20),
-				Children = {
-					new Label {
-						Text = "Home ContentPage",
-						VerticalOptions = LayoutOptions.StartAndExpand,
-						HorizontalOptions = LayoutOptions.CenterAndExpand
-					}
-				}
-			};
+			string pageTitle;
+			string bannerSource;
+			var mediaDatum = ConfigHelper.GetMediaData(PageName, out pageTitle, out bannerSource);
+
+			Content = new PlayerStack(pageTitle, bannerSource, mediaDatum);
 		}
 	}
 }

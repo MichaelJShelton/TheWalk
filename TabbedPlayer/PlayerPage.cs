@@ -1,66 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using Plugin.Share;
+using System.Linq;
+using System.Xml.Linq;
 using Xamarin.Forms;
 
 namespace TabbedPlayer
 {
 	public class PlayerPage : ContentPage
 	{
+		private const string PageName = "CurrentWalk";
+
 		public PlayerPage()
 		{
-			var md = new List<MediaData>
-			{
-				new MediaData
-				{
-					Title = "Step 1",
-					Detail = "Start Your Journey Here.",
-					ThumbnailSourceUrl = "http://www.sheltonlabs.com/WalkFiles/EasterButton.jpg",
-					MediaSourceUrl = "https://player.vimeo.com/video/159995991"
-				},
-				new MediaData
-				{
-					Title = "Step 2",
-					Detail = "Listen to the second step.",
-					ThumbnailSourceUrl = "http://www.sheltonlabs.com/WalkFiles/HarleyButton.jpg",
-					MediaSourceUrl = "http://www.sheltonlabs.com"
-				}
-			};
+			Icon = "FootSteps20.png";
 
-			Content = new StackLayout
-			{
-				Padding = new Thickness(20),
-				Children =
-				{
-					new Label {
-						Text = "Come Follow Me!",
-						VerticalOptions = LayoutOptions.StartAndExpand,
-						HorizontalOptions = LayoutOptions.CenterAndExpand
-					},
-					new ListView
-					{
-						HasUnevenRows = false,
-						SeparatorVisibility = SeparatorVisibility.None,
-						ItemsSource = md,
-						ItemTemplate = new DataTemplate(() =>
-						{
-							var ic = new ImageCell();
-							ic.SetBinding(ImageCell.ImageSourceProperty, "ThumbnailSourceUrl");
-							ic.SetBinding(TextCell.TextProperty, "Title");
-							ic.SetBinding(TextCell.DetailProperty, "Detail");
-							ic.SetBinding(TextCell.CommandParameterProperty, "MediaSourceUrl");
+			string pageTitle;
+			string bannerSource;
+			var mediaDatum = ConfigHelper.GetMediaData(PageName, out pageTitle, out bannerSource);
 
-							ic.Tapped += (object sender, EventArgs e) =>
-							{
-								OnMediaButtonClicked((string)ic.CommandParameter);
-							};
-
-							return ic;
-						})
-					},
-					new ShareView("http://goonthewalk.com/app", "Check out this great app!")
-				}
-			};
+			Content = new PlayerStack(pageTitle, bannerSource, mediaDatum);
 		}
 
 		/// <summary>
@@ -73,9 +31,13 @@ namespace TabbedPlayer
 		///		await Navigation.PopModalAsync();
 		///	}
 		/// </remarks>
-		async void OnMediaButtonClicked(string sourceURI)
+		async void OnMediaButtonClicked(
+			string title,
+			string sourceURI,
+			string resourceTitle,
+			string resourceUri)
 		{
-			await Navigation.PushModalAsync(new MediaPage(sourceURI), true);
+			await Navigation.PushModalAsync(new MediaPage(title, sourceURI, resourceTitle, resourceUri), true);
 		}
 	}
 }

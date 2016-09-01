@@ -7,9 +7,13 @@ namespace TabbedPlayer
 
 		public string Detail { get; set; }
 
-		public string ThumbnailSourceUrl { get; set; }
+		public string SourceUrl { get; set; }
 
-		public string MediaSourceUrl { get; set; }
+		public string ThumbnailUrl { get; set; }
+
+		public string ResourceTitle { get; set; }
+
+		public string ResourceUrl { get; set; }
 	}
 }
 

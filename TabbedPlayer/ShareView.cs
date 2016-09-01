@@ -12,7 +12,7 @@ namespace TabbedPlayer
 			HorizontalOptions = LayoutOptions.End;
 			VerticalOptions = LayoutOptions.End;
 
-			// Add a Transparent Button and an Image to each Grid location.
+			// Add an Image and a Transparent Button to each Grid location.
 			Children.Add(
 				new Image
 				{
@@ -24,6 +24,7 @@ namespace TabbedPlayer
 
 			var shareBtn = new Button
 			{
+				Margin = new Thickness(0),
 				HorizontalOptions = LayoutOptions.CenterAndExpand,
 				VerticalOptions = LayoutOptions.CenterAndExpand,
 				BackgroundColor = Color.Transparent,
@@ -34,7 +35,7 @@ namespace TabbedPlayer
 			shareBtn.Clicked += (sender, e) =>
 			{
 				// Do Sharing stuff here.
-				CrossShare.Current.ShareLink(link, message, "The Walk");
+				CrossShare.Current.Share(link, message);
 			};
 
 			Children.Add(shareBtn, 0, 0);

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Pages>
+	<Page Name="Home" bannerSource="http://wac.6261.mucdn.net/806261/artwork/images/cdn/673746/960/540/image.jpg">
+		<MediaContent>
+			<Media
+				Title="Welcome"
+				Detail="Start Here"
+				ThumbnailUrl="http://wac.6261.mucdn.net/806261/artwork/images/cdn/673755/120/120/image.jpg"
+				SourceUrl="http://subsplash.com/embed/7ffdd4b?video&amp;audio&amp;logo_watermark&amp;inwebplayer"
+			/>
+			<Media
+				Title="The Basics"
+				Detail="Minimally trivial information."
+				ThumbnailUrl="http://wac.6261.mucdn.net/806261/artwork/images/cdn/673755/120/120/image.jpg"
+				SourceUrl="http://subsplash.com/embed/8ed6d7b?video&amp;audio&amp;logo_watermark&amp;inwebplayer"
+			/>
+			<Media
+				Title="What About Worship?"
+				Detail="Make a noise... joyfully."
+				ThumbnailUrl="http://wac.6261.mucdn.net/806261/artwork/images/cdn/673755/120/120/image.jpg"
+				SourceUrl="http://subsplash.com/embed/ba82d87?video&amp;audio&amp;logo_watermark&amp;inwebplayer"
+			/>
+			<Media
+				Title="What About Giving?"
+				Detail="or not... we got you fam."
+				ThumbnailUrl="http://wac.6261.mucdn.net/806261/artwork/images/cdn/673755/120/120/image.jpg"
+				SourceUrl="http://subsplash.com/embed/d288ad7?video&amp;audio&amp;logo_watermark&amp;inwebplayer"
+			/>
+		</MediaContent>
+	</Page>
+	<Page Name="CurrentWalk" Title="Come Follow Me!" bannerSource="http://wac.6261.mucdn.net/806261/artwork/images/cdn/711233/960/350/image.jpg">
+		<MediaContent>
+			<Media
+				Title="Step 1"
+				Detail="Start Your Journey Here"
+				ThumbnailUrl="http://wac.6261.mucdn.net/806261/artwork/images/cdn/673388/120/120/image.jpg"
+				SourceUrl="http://subsplash.com/embed/92aebad?video&amp;audio&amp;logo_watermark&amp;inwebplayer"
+				ResourceTitle="Discussion Questions"
+				ResourceUrl="http://av1.w3e.subsplash.com/media/download/WK8H9Q/Discussion8_9STEP_1.pdf"	
+			/>
+			<Media
+				Title="Step 2"
+				Detail="Listen to the second step."
+				ThumbnailUrl="http://wac.6261.mucdn.net/806261/artwork/images/cdn/673389/120/120/image.jpg"
+				SourceUrl="http://subsplash.com/embed/e08a44c?video&amp;audio&amp;logo_watermark&amp;inwebplayer"
+				ResourceTitle="Discussion Questions"
+				ResourceUrl="http://av1.w3e.subsplash.com/media/download/WK8H9Q/Discussion8_9Step2.pdf"
+			/>
+			<Media
+				Title="Step 3"
+				Detail="Again today, listen. Let the journey continue."
+				ThumbnailUrl="http://wac.6261.mucdn.net/806261/artwork/images/cdn/673390/120/120/image.jpg"
+				SourceUrl="http://subsplash.com/embed/70577cc?video&amp;audio&amp;logo_watermark&amp;inwebplayer"
+				ResourceTitle="Discussion Questions"
+				ResourceUrl="http://av1.w3e.subsplash.com/media/download/WK8H9Q/Discussion8_9Step3.pdf"
+			/>
+			<Media
+				Title="Step 4"
+				Detail="Keep it going! Take another step with Jesus."
+				ThumbnailUrl="http://wac.6261.mucdn.net/806261/artwork/images/cdn/673392/120/120/image.jpg"
+				SourceUrl="http://subsplash.com/embed/d552185?video&amp;audio&amp;logo_watermark&amp;inwebplayer"
+				ResourceTitle="Discussion Questions"
+				ResourceUrl="http://av1.w3e.subsplash.com/media/download/WK8H9Q/Discussion8_9Step4.pdf"
+			/>
+			<Media
+				Title="Step 5"
+				Detail="Finish strong!"
+				ThumbnailUrl="http://wac.6261.mucdn.net/806261/artwork/images/cdn/673394/120/120/image.jpg"
+				SourceUrl="http://subsplash.com/embed/5737728?video&amp;audio&amp;logo_watermark&amp;inwebplayer"
+				ResourceTitle="Discussion Questions"
+				ResourceUrl="http://av1.w3e.subsplash.com/media/download/WK8H9Q/Discussion8_9Step5-copy.pdf"
+			/>
+		</MediaContent>
+	</Page>
+</Pages>

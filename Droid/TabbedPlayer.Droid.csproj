@@ -118,15 +118,15 @@
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
     <AndroidResource Include="Resources\layout\Toolbar.axml" />
     <AndroidResource Include="Resources\values\styles.xml" />
-    <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
-    <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable\Home35.png" />
     <AndroidResource Include="Resources\drawable\Settings35.png" />
     <AndroidResource Include="Resources\drawable-hdpi\iconW.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\iconW.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\iconW.png" />
     <AndroidResource Include="Resources\drawable\iconW.png" />
+    <AndroidResource Include="Resources\drawable\Home20.png" />
+    <AndroidResource Include="Resources\drawable\Settings20.png" />
+    <AndroidResource Include="Resources\drawable\FootSteps20.png" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="satellite-menu">

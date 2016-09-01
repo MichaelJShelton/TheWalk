@@ -8,11 +8,11 @@ namespace TabbedPlayer
 	{
 		public SettingsPage()
 		{
-			Icon = "Settings35.png";
+			Icon = "Settings20.png";
 
 			Content = new StackLayout
 			{
-				Padding = new Thickness(20),
+				Padding = new Thickness(0, 20, 0, 20),
 				Children = {
 					new Label {
 						Text = "Settings ContentPage",

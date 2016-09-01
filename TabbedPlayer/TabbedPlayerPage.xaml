@@ -5,6 +5,6 @@
 		xmlns:local="clr-namespace:TabbedPlayer;assembly=TabbedPlayer"
 		x:Class="TabbedPlayer.TabbedPlayerPage">
 	<local:HomePage Title="Home" />
-	<local:PlayerPage Title="Player" />
+	<local:PlayerPage Title="Walk" />
 	<local:SettingsPage Title="Settings"/>
 </TabbedPage>
