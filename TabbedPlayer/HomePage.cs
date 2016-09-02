@@ -7,6 +7,10 @@ using Xamarin.Forms;
 
 namespace TabbedPlayer
 {
+	/// <summary>
+	/// Home Page
+	/// BannerSource URL "http://wac.6261.mucdn.net/806261/artwork/images/cdn/673746/960/540/image.jpg"
+	/// </summary>
 	public class HomePage : ContentPage
 	{
 		private const string PageName = "Home";

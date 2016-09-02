@@ -41,6 +41,24 @@ namespace TabbedPlayer
 			};
 			backButton.Clicked += OnBackButtonClicked;
 
+			var buttons = new Grid
+			{
+				RowDefinitions = new RowDefinitionCollection() { new RowDefinition { Height = new GridLength(1, GridUnitType.Star) } },
+				ColumnDefinitions = new ColumnDefinitionCollection()
+			};
+
+			buttons.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Auto) });
+			if (resourceButton.IsEnabled)
+			{
+				buttons.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Auto) });
+				buttons.Children.Add(resourceButton, 0, 0);
+			}
+
+			buttons.Children.AddHorizontal(
+					new ShareView(
+						sourceUri,
+					string.Format("Check out \"{0}\" on The Walk!", title)));
+
 			Content = new StackLayout
 			{
 				Padding = new Thickness(0, 20, 0, 20),
@@ -51,10 +69,7 @@ namespace TabbedPlayer
 						HorizontalOptions = LayoutOptions.CenterAndExpand
 					},
 					browser,
-					resourceButton,
-					new ShareView(
-						sourceUri,
-						string.Format("Check out \"{0}\" on The Walk!", title)),
+					buttons,
 					backButton
 				}
 			};

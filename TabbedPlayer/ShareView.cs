@@ -18,8 +18,8 @@ namespace TabbedPlayer
 				{
 					IsVisible = true,
 					Source = ImageSource.FromResource("TabbedPlayer.Resources.share2.png"),
-					HeightRequest = 35,
-					WidthRequest = 35
+					HeightRequest = 45,
+					WidthRequest = 45
 				}, 0, 0);
 
 			var shareBtn = new Button
@@ -28,8 +28,8 @@ namespace TabbedPlayer
 				HorizontalOptions = LayoutOptions.CenterAndExpand,
 				VerticalOptions = LayoutOptions.CenterAndExpand,
 				BackgroundColor = Color.Transparent,
-				HeightRequest = 35,
-				WidthRequest = 35
+				HeightRequest = 65,
+				WidthRequest = 65
 			};
 
 			shareBtn.Clicked += (sender, e) =>
