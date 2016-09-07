@@ -29,7 +29,7 @@ namespace TabbedPlayer
 				Text = resourceTitle,
 				VerticalOptions = LayoutOptions.EndAndExpand,
 				HorizontalOptions = LayoutOptions.CenterAndExpand,
-				HeightRequest = 35				                                 
+				HeightRequest = 25	                                 
 			};
 			resourceButton.Clicked += (object sender, EventArgs e) => { OnMediaButtonClicked(resourceTitle, resourceUrl); };
 
@@ -37,7 +37,8 @@ namespace TabbedPlayer
 			{
 				Text = "Back",
 				VerticalOptions = LayoutOptions.EndAndExpand,
-				HorizontalOptions = LayoutOptions.CenterAndExpand
+				HorizontalOptions = LayoutOptions.CenterAndExpand,
+				HeightRequest = 25
 			};
 			backButton.Clicked += OnBackButtonClicked;
 
@@ -57,7 +58,7 @@ namespace TabbedPlayer
 			buttons.Children.AddHorizontal(
 					new ShareView(
 						sourceUri,
-					string.Format("Check out \"{0}\" on The Walk!", title)));
+						string.Format("Check out \"{0}\" on The Walk!", title)));
 
 			Content = new StackLayout
 			{

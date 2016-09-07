@@ -52,6 +52,7 @@
     <Compile Include="ShareView.cs" />
     <Compile Include="ConfigHelper.cs" />
     <Compile Include="PlayerStack.cs" />
+    <Compile Include="MediaCell.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

@@ -8,36 +8,38 @@ namespace TabbedPlayer
 	{
 		public ShareView(string link, string message)
 		{
+			Padding = new Thickness(0);
 			BackgroundColor = Color.Transparent;
-			HorizontalOptions = LayoutOptions.End;
-			VerticalOptions = LayoutOptions.End;
 
 			// Add an Image and a Transparent Button to each Grid location.
-			Children.Add(
-				new Image
-				{
-					IsVisible = true,
-					Source = ImageSource.FromResource("TabbedPlayer.Resources.share2.png"),
-					HeightRequest = 45,
-					WidthRequest = 45
-				}, 0, 0);
+			var shareImage = new Image
+			{
+				Margin = new Thickness(0),
+				HorizontalOptions = LayoutOptions.End,
+				HeightRequest = 25,
+				WidthRequest = 25,
+				MinimumHeightRequest = 25,
+				Opacity = .4,
+				IsVisible = true,
+				Source = ImageSource.FromResource("TabbedPlayer.Resources.share2.png")
+			};
 
 			var shareBtn = new Button
 			{
 				Margin = new Thickness(0),
-				HorizontalOptions = LayoutOptions.CenterAndExpand,
-				VerticalOptions = LayoutOptions.CenterAndExpand,
-				BackgroundColor = Color.Transparent,
-				HeightRequest = 65,
-				WidthRequest = 65
+				HorizontalOptions = LayoutOptions.End,
+				HeightRequest = 25,
+				WidthRequest = 25,
+				MinimumHeightRequest = 25
 			};
 
 			shareBtn.Clicked += (sender, e) =>
 			{
 				// Do Sharing stuff here.
-				CrossShare.Current.Share(link, message);
+				CrossShare.Current.ShareLink(link, message, "The Walk");
 			};
 
+			Children.Add(shareImage, 0, 0);
 			Children.Add(shareBtn, 0, 0);
 		}
 	}
