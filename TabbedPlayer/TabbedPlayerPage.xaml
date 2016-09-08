@@ -4,7 +4,4 @@
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 		xmlns:local="clr-namespace:TabbedPlayer;assembly=TabbedPlayer"
 		x:Class="TabbedPlayer.TabbedPlayerPage">
-	<local:HomePage Title="Home" />
-	<local:PlayerPage Title="Walk" />
-	<local:SettingsPage Title="Settings"/>
 </TabbedPage>

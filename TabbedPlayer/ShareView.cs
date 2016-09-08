@@ -6,41 +6,89 @@ namespace TabbedPlayer
 {
 	public class ShareView : Grid
 	{
-		public ShareView(string link, string message)
+		public ShareView(string link, bool showBack, bool showTitle, string title)
 		{
+			ColumnDefinitions = new ColumnDefinitionCollection()
+			{
+				new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Auto) },
+				new ColumnDefinition() { Width = new GridLength(8, GridUnitType.Auto) },
+				new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Auto) }
+			};
+
+			RowDefinitions = new RowDefinitionCollection()
+			{
+				new RowDefinition() { Height = new GridLength(1, GridUnitType.Star)}
+			};
+
 			Padding = new Thickness(0);
 			BackgroundColor = Color.Transparent;
 
-			// Add an Image and a Transparent Button to each Grid location.
-			var shareImage = new Image
+
+			if (showBack)
+			{
+				AddResourceImageButtonToLocation(
+					0,
+					"TabbedPlayer.Resources.Back20.png",
+					(sender, e) =>
+					{
+						Navigation.PopAsync(true);
+					});
+			}
+
+			if (showTitle)
+			{
+
+				var titleLbl = new Label
+				{
+					Text = title,
+					VerticalOptions = LayoutOptions.Start,
+					HorizontalOptions = LayoutOptions.CenterAndExpand
+				};
+
+				Children.Add(titleLbl, 2, 0);
+				SetColumnSpan(titleLbl, 8);
+			}
+
+			AddResourceImageButtonToLocation(
+				10,
+				"TabbedPlayer.Resources.Share20.png",
+				(sender, e) =>
+				{
+					CrossShare.Current.ShareLink(
+						link,
+						string.Format("Check out \"{0}\" on The Walk!", title),
+						"The Walk");
+				});
+		}
+
+		// Add an Image and a Transparent Button to the Grid location.
+		private void AddResourceImageButtonToLocation(int x, string resource, EventHandler clicked)
+		{
+			var img = new Image
 			{
 				Margin = new Thickness(0),
 				HorizontalOptions = LayoutOptions.End,
 				HeightRequest = 25,
 				WidthRequest = 25,
 				MinimumHeightRequest = 25,
-				Opacity = .4,
+				Opacity = .6,
 				IsVisible = true,
-				Source = ImageSource.FromResource("TabbedPlayer.Resources.share2.png")
+				Source = ImageSource.FromResource(resource)
 			};
 
-			var shareBtn = new Button
+			var btn = new Button
 			{
 				Margin = new Thickness(0),
 				HorizontalOptions = LayoutOptions.End,
 				HeightRequest = 25,
 				WidthRequest = 25,
-				MinimumHeightRequest = 25
+				MinimumHeightRequest = 25,
+				BackgroundColor = Color.Transparent
 			};
 
-			shareBtn.Clicked += (sender, e) =>
-			{
-				// Do Sharing stuff here.
-				CrossShare.Current.ShareLink(link, message, "The Walk");
-			};
-
-			Children.Add(shareImage, 0, 0);
-			Children.Add(shareBtn, 0, 0);
+			btn.Clicked += clicked;
+			Children.Add(img, x, 0);
+			Children.Add(btn, x, 0);
 		}
 	}
 }

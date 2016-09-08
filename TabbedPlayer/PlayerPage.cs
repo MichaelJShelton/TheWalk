@@ -12,8 +12,7 @@ namespace TabbedPlayer
 
 		public PlayerPage()
 		{
-			Icon = "FootSteps20.png";
-
+			NavigationPage.SetHasNavigationBar(this, false);
 			string pageTitle;
 			string bannerSource;
 			var mediaDatum = ConfigHelper.GetMediaData(PageName, out pageTitle, out bannerSource);

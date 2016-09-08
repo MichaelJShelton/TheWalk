@@ -35,6 +35,8 @@
     <EmbeddedResource Include="Resources\settings.png" />
     <EmbeddedResource Include="Resources\share.png" />
     <EmbeddedResource Include="Resources\share2.png" />
+    <EmbeddedResource Include="Resources\Back20.png" />
+    <EmbeddedResource Include="Resources\Share20.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">

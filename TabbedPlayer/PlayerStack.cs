@@ -16,10 +16,11 @@ namespace TabbedPlayer
 			Children.Add(
 				new ShareView(
 					"http://goonthewalk.com/app",
-					string.Format("Check out \"{0}\" on The Walk!", title))
+					false,
+					false,
+					string.Empty)
 				{
-					HorizontalOptions = LayoutOptions.End,
-				 	
+					HorizontalOptions = LayoutOptions.End				 	
 				});
 
 			Children.Add(new Image
@@ -62,13 +63,13 @@ namespace TabbedPlayer
 		///		await Navigation.PopModalAsync();
 		///	}
 		/// </remarks>
-		async void OnMediaButtonClicked(
+		void OnMediaButtonClicked(
 			string title,
 			string sourceURI,
 			string resourceTitle,
 			string resourceUri)
 		{
-			await Navigation.PushModalAsync(new MediaPage(title, sourceURI, resourceTitle, resourceUri), true);
+			Navigation.PushAsync(new MediaPage(title, sourceURI, resourceTitle, resourceUri), true);
 		}
 	}
 }

@@ -17,11 +17,12 @@ namespace TabbedPlayer
 
 		public HomePage()
 		{
-			Icon = "Home20.png";
-
+			NavigationPage.SetHasNavigationBar(this, false);
 			string pageTitle;
 			string bannerSource;
 			var mediaDatum = ConfigHelper.GetMediaData(PageName, out pageTitle, out bannerSource);
+
+			Title = pageTitle;
 
 			Content = new PlayerStack(pageTitle, bannerSource, mediaDatum);
 		}

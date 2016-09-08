@@ -8,7 +8,7 @@ namespace TabbedPlayer
 	{
 		public SettingsPage()
 		{
-			Icon = "Settings20.png";
+			NavigationPage.SetHasNavigationBar(this, false);
 
 			Content = new StackLayout
 			{

@@ -8,6 +8,8 @@ namespace TabbedPlayer
 	{
 		public MediaPage(string title, string sourceUri, string resourceTitle, string resourceUrl)
 		{
+			NavigationPage.SetHasNavigationBar(this, false);
+
 			var browser = new WebView
 			{
 				VerticalOptions = LayoutOptions.StartAndExpand,
@@ -20,70 +22,51 @@ namespace TabbedPlayer
 			browser.IsEnabled = true;
 			browser.Focus();
 
-			bool showResourceButton = !string.IsNullOrEmpty(resourceUrl);
-
-			var resourceButton = new Button
-			{
-				IsEnabled = showResourceButton,
-				IsVisible = showResourceButton,
-				Text = resourceTitle,
-				VerticalOptions = LayoutOptions.EndAndExpand,
-				HorizontalOptions = LayoutOptions.CenterAndExpand,
-				HeightRequest = 25	                                 
-			};
-			resourceButton.Clicked += (object sender, EventArgs e) => { OnMediaButtonClicked(resourceTitle, resourceUrl); };
-
-			var backButton = new Button
-			{
-				Text = "Back",
-				VerticalOptions = LayoutOptions.EndAndExpand,
-				HorizontalOptions = LayoutOptions.CenterAndExpand,
-				HeightRequest = 25
-			};
-			backButton.Clicked += OnBackButtonClicked;
-
 			var buttons = new Grid
 			{
 				RowDefinitions = new RowDefinitionCollection() { new RowDefinition { Height = new GridLength(1, GridUnitType.Star) } },
 				ColumnDefinitions = new ColumnDefinitionCollection()
 			};
 
-			buttons.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Auto) });
-			if (resourceButton.IsEnabled)
+			bool showResourceButton = !string.IsNullOrEmpty(resourceUrl);
+			if (showResourceButton)
 			{
-				buttons.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Auto) });
-				buttons.Children.Add(resourceButton, 0, 0);
-			}
+				var resourceButton = new Button
+				{
+					IsEnabled = showResourceButton,
+					IsVisible = showResourceButton,
+					Text = resourceTitle,
+					VerticalOptions = LayoutOptions.StartAndExpand,
+					HorizontalOptions = LayoutOptions.CenterAndExpand,
+					HeightRequest = 25,
+					Opacity = 0.4,
+					TextColor = Color.White,
+					BackgroundColor = Color.FromHex("AABDC0")
+				};
 
-			buttons.Children.AddHorizontal(
-					new ShareView(
-						sourceUri,
-						string.Format("Check out \"{0}\" on The Walk!", title)));
+				resourceButton.Clicked += (object sender, EventArgs e) =>
+				{
+					Navigation.PushAsync(new MediaPage(resourceTitle, resourceUrl, string.Empty, string.Empty), true);
+				};
+				buttons.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Auto) });
+				buttons.Children.AddHorizontal(resourceButton);
+			}
 
 			Content = new StackLayout
 			{
-				Padding = new Thickness(0, 20, 0, 20),
+				// Add space to the Top and Bottom of the Player Stack so it is positioned below
+				// the top status bar (wifi signal, battery) and above the bottom Tabs in the TabLayout.
+				Padding = new Thickness(0, Device.OnPlatform(20, 0, 0), 0, Device.OnPlatform(5, 0, 0)),
 				Children = {
-					new Label {
-						Text = title,
-						VerticalOptions = LayoutOptions.StartAndExpand,
-						HorizontalOptions = LayoutOptions.CenterAndExpand
-					},
+					new ShareView(
+						sourceUri,
+						true,
+						true,
+						title),
 					browser,
-					buttons,
-					backButton
+					buttons
 				}
 			};
-		}
-
-		async void OnMediaButtonClicked(string title, string sourceURI)
-		{
-			await Navigation.PushModalAsync(new MediaPage(title, sourceURI, string.Empty, string.Empty), true);
-		}
-
-		async void OnBackButtonClicked(object sender, EventArgs e)
-		{
-			await Navigation.PopModalAsync(true);
 		}
 	}
 }
